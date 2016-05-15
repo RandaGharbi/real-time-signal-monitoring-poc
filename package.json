@@ -13,8 +13,6 @@
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "q": "^1.4.1",
-    "randbytes": "0.0.1",
-    "randombytes": "^2.0.3",
     "serve-favicon": "~2.3.0"
   }
 }

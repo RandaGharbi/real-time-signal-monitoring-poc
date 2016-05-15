@@ -18,51 +18,51 @@ app.get('/range', function(req, res, next) {
 });
 
 app.get('/data/poc1', function(req, res, next) {
-    var data = {
-        DS1: null,
-        DS2: null
-    };
-
-    utils.urandomPromise(1).then(function(urandomBuffer) {
-        data.DS1 = helper.normalize(urandomBuffer[0]);
-        return utils.cryptoPromise(1);
-    }, function(error) {
-        console.log('failed on the crypto module:', error);
-    }).then(function(cryptoBuffer) {
-        data.DS2 = helper.normalize(cryptoBuffer[0]);
-
-        res.json(data);
-
-    }, function(error) {
-        console.log('failed on the /dev/urandom module:', error);
-    });
+    // var data = {
+    //     DS1: null,
+    //     DS2: null
+    // };
+    //
+    // utils.urandomPromise(1).then(function(urandomBuffer) {
+    //     data.DS1 = helper.normalize(urandomBuffer[0]);
+    //     return utils.cryptoPromise(1);
+    // }, function(error) {
+    //     console.log('failed on the crypto module:', error);
+    // }).then(function(cryptoBuffer) {
+    //     data.DS2 = helper.normalize(cryptoBuffer[0]);
+    //
+    //     res.json(data);
+    //
+    // }, function(error) {
+    //     console.log('failed on the /dev/urandom module:', error);
+    // });
 });
 
 app.get('/data/poc2', function(req, res, next) {
-    var data = {
-        DS1: null,
-        DS2: null
-    };
-
-    utils.urandomPromise(1).then(function(urandomBuffer) {
-        data.DS1 = helper.normalizeProc2(urandomBuffer[0]);
-        return utils.cryptoPromise(1);
-    }, function(error) {
-        console.log('failed on the crypto module:', error);
-    }).then(function(cryptoBuffer) {
-        data.DS2 = helper.normalizeProc2(cryptoBuffer[0]);
-
-        res.json(data);
-
-    }, function(error) {
-        console.log('failed on the /dev/urandom module:', error);
-    });
+    // var data = {
+    //     DS1: null,
+    //     DS2: null
+    // };
+    //
+    // utils.urandomPromise(1).then(function(urandomBuffer) {
+    //     data.DS1 = helper.normalizeProc2(urandomBuffer[0]);
+    //     return utils.cryptoPromise(1);
+    // }, function(error) {
+    //     console.log('failed on the crypto module:', error);
+    // }).then(function(cryptoBuffer) {
+    //     data.DS2 = helper.normalizeProc2(cryptoBuffer[0]);
+    //
+    //     res.json(data);
+    //
+    // }, function(error) {
+    //     console.log('failed on the /dev/urandom module:', error);
+    // });
 });
 
 app.get('/book', function(req, res, next) {
-    helper.getShakespeareContent().then(function(shakespeareBook) {
-        res.json(shakespeareBook);
-    },function(error){
-        console.log(error);
-    });
+    // helper.getShakespeareContent().then(function(shakespeareBook) {
+    //     res.json(shakespeareBook);
+    // },function(error){
+    //     console.log(error);
+    // });
 });
